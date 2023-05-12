@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_color"
+    tools:context=".ui.main.MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.leanback.widget.SearchOrbView
+        android:id="@+id/sov_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_top"
+        app:layout_constraintStart_toEndOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top_top" />
+
+    <androidx.leanback.widget.SearchEditText
+        android:id="@+id/set_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical|start"
+        android:background="@null"
+        android:cursorVisible="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="Search any pic"
+        android:singleLine="true"
+        android:textColor="@color/white_color"
+        android:textCursorDrawable="@null"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/sov_search"
+        app:layout_constraintBottom_toBottomOf="@id/sov_search"
+        app:layout_constraintStart_toEndOf="@id/sov_search"
+        app:layout_constraintEnd_toStartOf="@id/txt_powered"/>
+
+    <TextView
+        android:id="@+id/txt_results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:text="Trending now on Flickr"
+        android:textColor="@color/white_color"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_top"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/sov_search" />
+
+    <TextView
+        android:focusable="false"
+        android:id="@+id/txt_name_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Photo Search"
+        android:textColor="@color/white_color"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/txt_powered"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top_top" />
+
+    <TextView
+        android:id="@+id/txt_powered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:text="Powered by Flickr"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_top"
+        app:layout_constraintEnd_toEndOf="@+id/txt_name_app"
+        app:layout_constraintTop_toBottomOf="@+id/txt_name_app" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/main_fragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top">
+
+    </androidx.fragment.app.FragmentContainerView>
+</androidx.constraintlayout.widget.ConstraintLayout>
